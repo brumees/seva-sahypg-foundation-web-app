@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page - Seva Sahyog NGO</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333;">
+    <!-- Header -->
+    <header style="display: flex; justify-content: space-between; align-items: center; background-color: #004085; padding: 10px 20px; color: white;">
+        <div class="logo">
+            <img src="logo.png" alt="Seva Sahyog Logo" style="height: 50px;">
+        </div>
+        <nav>
+            <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+                <li style="margin: 0 15px;"><a href="index.html" style="color: white; text-decoration: none; font-weight: bold;">Home</a></li>
+                <li style="margin: 0 15px;"><a href="admin.html" style="color: white; text-decoration: none; font-weight: bold;">Admin</a></li>
+                <li style="margin: 0 15px;"><a href="mentor.html" style="color: white; text-decoration: none; font-weight: bold;">Mentor</a></li>
+                <li style="margin: 0 15px;"><a href="user.html" style="color: white; text-decoration: none; font-weight: bold;">User</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- User Login Form -->
+    <div style="display: flex; justify-content: center; align-items: center; height: calc(100vh - 70px);">
+        <form onsubmit="return validateUser()" style="background-color: white; padding: 30px; border: 1px solid #ddd; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+            <h2 style="text-align: center; color: #004085;">User Login</h2>
+
+            <label for="userName" style="display: block; margin-bottom: 10px;">Name:</label>
+            <input type="text" id="userName" name="userName" placeholder="Enter your name" required style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px;">
+
+            <label for="userPassword" style="display: block; margin-bottom: 10px;">Password:</label>
+            <input type="password" id="userPassword" name="userPassword" placeholder="Enter your password" required style="width: 100%; padding: 8px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px;">
+
+            <button type="submit" style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; width: 100%;">Login</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align: center; background-color: #004085; color: white; padding: 10px; position: fixed; bottom: 0; width: 100%;">
+        <p>&copy; 2025 Seva Sahyog NGO. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function validateUser() {
+            // Simulated user data
+            const validUserName = "user1";
+            const validUserPassword = "user123";
+
+            // Simulated user details (to be passed on to the user dashboard)
+            const userDetails = {
+                name: "John Doe",
+                attendedLectures: [
+                    { date: "2025-01-01", subject: "Mathematics", status: "Attended" },
+                    { date: "2025-01-03", subject: "Science", status: "Attended" },
+                    { date: "2025-01-05", subject: "English", status: "Absent" }
+                ]
+            };
+
+            const name = document.getElementById("userName").value.trim();
+            const password = document.getElementById("userPassword").value.trim();
+
+            if (name === validUserName && password === validUserPassword) {
+                // Store user details in localStorage (or sessionStorage)
+                localStorage.setItem("userDetails", JSON.stringify(userDetails));
+                // Redirect to user dashboard
+                window.location.href = "user_dashboard.html";
+                return false; // Prevent form submission
+            } else {
+                alert("Invalid credentials. Please try again.");
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+</html>

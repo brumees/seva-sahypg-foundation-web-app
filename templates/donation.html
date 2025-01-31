@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Seva Sahyog NGO</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333;">
+    <!-- Header -->
+    <header style="display: flex; justify-content: space-between; align-items: center; background-color: #004085; padding: 10px 20px; color: white;">
+        <div class="logo">
+            <img src="C:\Users\Admin\OneDrive\Desktop\Seva Sahyog\Static\logo.png" alt="Seva Sahyog Logo" style="height: 50px;">
+        </div>
+        <nav>
+            <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+                <li style="margin: 0 15px;"><a href="index.html" style="color: white; text-decoration: none; font-weight: bold;">Home</a></li>
+                <li style="margin: 0 15px;"><a href="admin.html" style="color: white; text-decoration: none; font-weight: bold;">Admin</a></li>
+                <li style="margin: 0 15px;"><a href="mentor.html" style="color: white; text-decoration: none; font-weight: bold;">Mentor</a></li>
+                <li style="margin: 0 15px;"><a href="user.html" style="color: white; text-decoration: none; font-weight: bold;">User</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Donation Section -->
+    <div style="display: flex; justify-content: center; align-items: center; height: calc(100vh - 70px);">
+        <div style="background-color: white; padding: 30px; border: 1px solid #ddd; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; text-align: center;">
+            <h2 style="color: #004085;">Donate to Seva Sahyog</h2>
+            <p style="font-size: 18px; color: #555;">Your contribution helps us provide free education to underprivileged students.</p>
+
+            <!-- Button to Show QR Code and Donation Info -->
+            <button onclick="showDonationDetails()" style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-top: 20px;">
+                Donate Now
+            </button>
+
+            <!-- Donation Info Section (Initially Hidden) -->
+            <div id="donationDetails" style="display: none; margin-top: 30px; text-align: center;">
+                <h3 style="color: #004085;">Scan to Donate</h3>
+                <p style="font-size: 16px; color: #555;">Scan the QR code below to make your donation via PayPal or any other payment method.</p>
+                
+                <!-- QR Code Image -->
+                <img src="C:\Users\Admin\OneDrive\Desktop\Seva Sahyog\Static\qr.png" alt="QR Code" style="max-width: 200px; margin-top: 20px;">
+
+                <!-- Donation Information -->
+                <p style="font-size: 16px; margin-top: 20px;">Thank you for your generous contribution! Your donation helps us empower students with education.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align: center; background-color: #004085; color: white; padding: 10px; position: fixed; bottom: 0; width: 100%;">
+        <p>&copy; 2025 Seva Sahyog NGO. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Function to show donation details
+        function showDonationDetails() {
+            const donationDetails = document.getElementById("donationDetails");
+            donationDetails.style.display = "block"; // Show the donation information
+        }
+    </script>
+</body>
+</html>

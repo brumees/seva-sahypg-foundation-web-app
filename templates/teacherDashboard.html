@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - Seva Sahyog NGO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        h1 {
+            color: #004085;
+        }
+        .info-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        .info-item {
+            margin-bottom: 15px;
+        }
+        .info-item span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teacher Dashboard</h1>
+    <div class="info-container">
+        <h2>Welcome, <span id="teacherNameDisplay"></span></h2>
+        <div class="info-item"><span>ID:</span> T12345</div>
+        <div class="info-item"><span>Subject Specialization:</span> Mathematics, Science</div>
+        <div class="info-item"><span>Classes Taken:</span> 10</div>
+        <div class="info-item"><span>Total Students Taught:</span> 250</div>
+        <div class="info-item"><span>Upcoming Schedule:</span> Monday, 10:00 AM - Science Class</div>
+        <div class="info-item"><span>Performance Notes:</span> Excellent engagement with students.</div>
+    </div>
+
+    <script>
+        // Extract the teacher name from the URL
+        const params = new URLSearchParams(window.location.search);
+        const teacherName = params.get("teacherName");
+        
+        // Display the teacher name if available
+        if (teacherName) {
+            document.getElementById("teacherNameDisplay").textContent = teacherName;
+        } else {
+            document.getElementById("teacherNameDisplay").textContent = "Unknown";
+        }
+    </script>
+</body>
+</html>

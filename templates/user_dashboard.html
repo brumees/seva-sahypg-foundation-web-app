@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Seva Sahyog NGO</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333;">
+    <!-- Header -->
+    <header style="display: flex; justify-content: space-between; align-items: center; background-color: #004085; padding: 10px 20px; color: white;">
+        <div class="logo">
+            <img src="logo.png" alt="Seva Sahyog Logo" style="height: 50px;">
+        </div>
+        <nav>
+            <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+                <li style="margin: 0 15px;"><a href="index.html" style="color: white; text-decoration: none; font-weight: bold;">Home</a></li>
+                <li style="margin: 0 15px;"><a href="admin.html" style="color: white; text-decoration: none; font-weight: bold;">Admin</a></li>
+                <li style="margin: 0 15px;"><a href="mentor.html" style="color: white; text-decoration: none; font-weight: bold;">Mentor</a></li>
+                <li style="margin: 0 15px;"><a href="user.html" style="color: white; text-decoration: none; font-weight: bold;">User</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- User Dashboard -->
+    <div style="padding: 20px; background-color: white; margin: 20px;">
+        <h2 style="color: #004085;">Welcome, <span id="userName"></span></h2>
+
+        <h3 style="color: #004085;">Your Attended Lectures:</h3>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 1px solid #ddd;">
+            <thead>
+                <tr style="background-color: #f2f2f2;">
+                    <th style="padding: 8px; text-align: left;">Date</th>
+                    <th style="padding: 8px; text-align: left;">Subject</th>
+                    <th style="padding: 8px; text-align: left;">Status</th>
+                </tr>
+            </thead>
+            <tbody id="lectureTable">
+                <!-- Data will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align: center; background-color: #004085; color: white; padding: 10px; position: fixed; bottom: 0; width: 100%;">
+        <p>&copy; 2025 Seva Sahyog NGO. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Load user data from localStorage
+        const userDetails = JSON.parse(localStorage.getItem("userDetails"));
+
+        if (userDetails) {
+            // Display user name
+            document.getElementById("userName").textContent = userDetails.name;
+
+            // Display attended lectures
+            const lectureTable = document.getElementById("lectureTable");
+            userDetails.attendedLectures.forEach(lecture => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td style="padding: 8px; border: 1px solid #ddd;">${lecture.date}</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;">${lecture.subject}</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;">${lecture.status}</td>
+                `;
+                lectureTable.appendChild(row);
+            });
+        } else {
+            alert("No user data found. Please log in.");
+            window.location.href = "user.html";
+        }
+    </script>
+</body>
+</html>

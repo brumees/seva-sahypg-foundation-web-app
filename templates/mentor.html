@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Login - Seva Sahyog NGO</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333;">
+    <!-- Header -->
+    <header style="display: flex; justify-content: space-between; align-items: center; background-color: #004085; padding: 10px 20px; color: white;">
+        <div class="logo">
+            <img src="logo.png" alt="Seva Sahyog Logo" style="height: 50px;">
+        </div>
+        <nav>
+            <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+                <li style="margin: 0 15px;"><a href="index.html" style="color: white; text-decoration: none; font-weight: bold;">Home</a></li>
+                <li style="margin: 0 15px;"><a href="admin.html" style="color: white; text-decoration: none; font-weight: bold;">Admin</a></li>
+                <li style="margin: 0 15px;"><a href="mentor.html" style="color: white; text-decoration: none; font-weight: bold;">Mentor</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mentor Login Form -->
+    <div style="display: flex; justify-content: center; align-items: center; height: calc(100vh - 70px);">
+        <form action="mentor_dashboard.html" method="post" onsubmit="return validateMentor()" style="background-color: white; padding: 30px; border: 1px solid #ddd; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+            <h2 style="text-align: center; color: #004085;">Mentor Login</h2>
+            
+            <label for="mentorName" style="display: block; margin-bottom: 10px;">Name:</label>
+            <input type="text" id="mentorName" name="mentorName" placeholder="Enter your name" required style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px;">
+
+            <label for="location" style="display: block; margin-bottom: 10px;">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter your location" required style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px;">
+
+            <label for="password" style="display: block; margin-bottom: 10px;">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required style="width: 100%; padding: 8px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px;">
+
+            <button type="submit" style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; width: 100%;">Login</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align: center; background-color: #004085; color: white; padding: 10px; position: fixed; bottom: 0; width: 100%;">
+        <p>&copy; 2025 Seva Sahyog NGO. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function validateMentor() {
+            // Replace these with your actual credentials
+            const validName = "bhumika";
+            const validLocation = "panvel";
+            const validPassword = "123";
+
+            const name = document.getElementById("mentorName").value;
+            const location = document.getElementById("location").value;
+            const password = document.getElementById("password").value;
+
+            if (name === validName && location === validLocation && password === validPassword) {
+                return true; // Allow form submission
+            } else {
+                alert("Invalid credentials. Please try again.");
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+</html>

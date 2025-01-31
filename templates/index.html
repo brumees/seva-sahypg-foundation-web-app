@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Seva Sahyog NGO</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #004085;
+            padding: 10px 20px;
+            color: white;
+        }
+        .logo img {
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        /* Banner Section */
+        .banner {
+            position: relative;
+            width: 100%;
+            max-height: 350px;
+            overflow: hidden;
+        }
+        .banner img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        }
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            z-index: 1;
+        }
+        .banner-text h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .banner-text p {
+            font-size: 1.2rem;
+        }
+        /* Cards Section */
+        .cards-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h2 {
+            color: #004085;
+            margin: 0 0 10px;
+        }
+        .card img {
+            max-width: 100px;
+            margin-bottom: 15px;
+        }
+        .card p {
+            color: #555;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #004085;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="C:\Users\Admin\OneDrive\Desktop\Seva Sahyog\Static\logo.png" alt="Seva Sahyog Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="mentor.html">Mentor</a></li>
+                <li><a href="user.html">User</a></li>
+                <li><a href="donation.html">Donate</a></li>
+                <li><a href="teachers.html">Teachers</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <!-- Banner Section -->
+    <div class="banner">
+        <img src="C:\Users\Admin\OneDrive\Desktop\Seva Sahyog\Static\ngo.jpeg" alt="Empowering Education">
+        <div class="banner-text">
+            <h1>Welcome to Seva Sahyog NGO</h1>
+            <p>Empowering underprivileged students through free education.</p>
+            <a href="donation.html" style="background-color: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Support Us</a>
+        </div>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="cards-container">
+        <!-- Admin Portal -->
+        <a href="admin.html" style="text-decoration: none;">
+            <div class="card">
+                <img src="C:\Users\Admin\OneDrive\Desktop\Seva Sahyog\Static\adminlogo.jpg" alt="Admin">
+                <h2>Admin Portal</h2>
+                <p>Manage NGO operations efficiently.</p>
+            </div>
+        </a>
+        <!-- Mentor Portal -->
+        <a href="mentor.html" style="text-decoration: none;">
+            <div class="card">
+                <img src="C:\Users\Admin\OneDrive\Desktop\Seva Sahyog\Static\mentorlogo.webp" alt="Mentor">
+                <h2>Mentor Portal</h2>
+                <p>Record lectures and attendance seamlessly.</p>
+            </div>
+        </a>
+        <!-- User Portal -->
+        <a href="user.html" style="text-decoration: none;">
+            <div class="card">
+                <img src="C:\Users\Admin\OneDrive\Desktop\Seva Sahyog\Static\userlogo.png" alt="User">
+                <h2>User Portal</h2>
+                <p>Learn more about our achievements and make donations.</p>
+            </div>
+        </a>
+    <!-- Teachers Portal -->
+    <!-- Teachers Portal Card -->
+<a href="teachers.html" style="text-decoration: none;">
+    <div class="card">
+        <img src="C:\Users\Admin\OneDrive\Desktop\Seva Sahyog\Static\t1.jpg" alt="Teachers">
+        <h2>Teachers Portal</h2>
+        <p>View and manage teacher information and schedules.</p>
+    </div>
+</a>
+
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Seva Sahyog NGO. All rights reserved.</p>
+    </footer>
+</body>
+</html>
