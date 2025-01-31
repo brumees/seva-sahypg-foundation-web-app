@@ -5,16 +5,19 @@ app = Flask(__name__)
 
 # MongoDB connection
 client = MongoClient("mongodb://localhost:27017/") 
-db = client["mydatabase"]  # Database name
+db = client["seva-sahyog"]  # Database name
 collection = db["users"]   # Collection name
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
 def add_user():
     return "<p>Hello World!</p>"
 
 @app.route('/register', methods=['GET'])
 def register():
-    users = list(collection.find({}, {"_id": 0}))  # Excluding _id from response
+    users = list(collection.find({}) ) # Excluding _id from response
+    print(users)
+    for user in users:
+        user["_id"] = str(user["_id"])
     return jsonify(users)
 
 if __name__ == '__main__':
